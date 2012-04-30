@@ -50,6 +50,7 @@ function bones_get_socialimage() {
 
 // facebook share correct image fix (thanks to yoast)
 function bones_facebook_connect() {
+	if (have_posts()):while(have_posts()):the_post(); endwhile; endif; // fix for description not showing
 	echo "\n" . '<!-- facebook open graph stuff -->' . "\n";
 	echo '<!-- place your facebook app id below -->';
 	echo '<meta property="fb:app_id" content="1234567890"/>' . "\n";
